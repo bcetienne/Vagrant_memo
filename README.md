@@ -98,11 +98,11 @@ Chercher la ligne contenant `APACHE_RUN_USER` et `APACHE_RUN_GROUP` pour changer
 ----
 ### Relancer des services
 
-    sudo <serviceName> restart
+    sudo service <serviceName> restart
 
 ou bien
 
-    sudo <serviceName> reload
+    sudo service <serviceName> reload
 
 Utiliser la commande pour que le service soit relancé ce qui permet de prendre en compte les modifications faites.
 
@@ -150,3 +150,16 @@ Ouvrir plusieurs consoles.
     git clone <project> ./
 
 Permet de cloner juste le contenu du repository.
+
+----
+## Ordre pour faire une machine Vagrant selon Morgan
+
+Après avoir créé le dossier, installer la machine avec la commande `vagrant up`, après que la machine soit installée, télécharger le paquet de pour `apache2` et modifier les valeurs des utilisateurs d'Apache.
+
+Modifier les utilisateurs avec la commande `chown`, virer le `index.html` présent de base avec Apache.
+
+Retourner dans le dossier de la Vagrant, créer un dossier `data`, cloner le dépôt Git dans le dossier `data`.
+
+Modifier le fichier `Vagrantfile` pour le `sync_folder`, sauvegarder, et relancer la machine avec `vagrant reload`.
+
+Retourner avec la commande `vagrant ssh` dans le serveur, chercher le dossier `/var/www/html` pour voir si tout le dépôt à bien été copié depuis Git.
