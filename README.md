@@ -112,8 +112,6 @@ Qui permet de désactiver des sites (désactiver un hôte virtuel / les fichiers
 
 > Exemple concret : Si deux fichiers de configuration ont été fait par projet `projet1.conf` et `projet2.conf`, désactiver alors le fichier `000-default.conf`.
 
-
-
     sudo a2ensite
 
 Qui permet d'activer des sites (activer un hôte virtuel / les fichiers conf en gros)
@@ -148,6 +146,17 @@ Utiliser la commande `vagrant box add <nomImage> <chemin>` pour installer l'imag
 
 Ouvrir le fichier `Vagrantfile`, renommer la ligne commençant par `config.vm.box` par le nom donné sur la commande ci-dessus (exemple : Si dans la commande ci-dessus le `nomImage` est égal à `baseBox` alors, remplacer la valeur entre `"` par `baseBox`. Puis terminer par la commande `vagrant up` pour lancer l'installation de la machine.
 
+## Configurer PHP
+### Afficher les erreurs
+
+Dans la Vagrant via SSH, aller dans le fichier `sudo nano /etc/php/7.0/apache2/php.ini`.
+
+Rechercher la ligne `display_errors = Off` et remplacer `Off` par `On`. Attention au "o" en majuscule.
+
+Rechercher la ligne `display_startup_errors = Off` et remplacer `Off` par `On`. Attention au "o" en majuscule.
+
+Redémarrer le service Apache
+
 ## Applications
 
 > Juste la fin de la commande est écrit, ajouter le `sudo apt-get install <Commande>`
@@ -174,6 +183,7 @@ Ouvrir le fichier `Vagrantfile`, renommer la ligne commençant par `config.vm.bo
 |`ll`  	                |raccourci de `ls-all`	                                                                |
 |`ctrl + R`	            |Permet de retrouver une ancienne commande déjà taper sans utiliser les flèches du haut.|
 |`ctrl + K`             |Supprime une ligne dans l'invite de commande.                                          |
+|`ctrl + W`             |Chercher une chaîne de caractères.                                                     |
 |`command + T`          |Ouvrir plusieurs consoles.	                                                            |
 |`git clone <projet> ./`|Permet de cloner juste le contenu du repository.	                                    |
 |`sudo !!`              |Permet de réutiliser une commande qui n'a pas fonctionné sans les droits d'admins en utilisant cette fois-ci les droits d'administration.	                                                                          |
