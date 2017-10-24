@@ -186,40 +186,14 @@ Relancer le Apache2 avec la commande `sudo service apache2 reload`.
 
 ## Commandes pratiques en ligne de commandes
 
-    ll
-
-Raccourci de `ls-all`.
-
-
-
-    ctrl + R
-
-Permet de retrouver une ancienne commande déjà taper sans utiliser les flèches du haut.
-
-
-
-    ctrl + K
-
-Supprime une ligne dans l'invite de commande.
-
-
-
-    command + T
-
-Ouvrir plusieurs consoles.
-
-
-
-    git clone <project> ./
-
-Permet de cloner juste le contenu du repository.
-
-
-
-    sudo !!
-
-Permet de réutiliser une commande qui n'a pas fonctionné sans les droits d'admins en utilisant cette fois-ci les droits d'administration.
-
+|Commande   	        |Explication   	                                                                        |
+|-----------------------|---------------------------------------------------------------------------------------|
+|`ll`  	                |raccourci de `ls-all`	                                                                |
+|`ctrl + R`	            |Permet de retrouver une ancienne commande déjà taper sans utiliser les flèches du haut.|
+|`ctrl + K`             |Supprime une ligne dans l'invite de commande.                                          |
+|`command + T`          |Ouvrir plusieurs consoles.	                                                            |
+|`git clone <projet> ./`|Permet de cloner juste le contenu du repository.	                                    |
+|`sudo !!`              |Permet de réutiliser une commande qui n'a pas fonctionné sans les droits d'admins en utilisant cette                          fois-ci les droits d'administration.	                                                  |
 
 ## Ordre pour faire une machine Vagrant selon Morgan
 
