@@ -146,7 +146,7 @@ Utiliser la commande `vagrant box add <nomImage> <chemin>` pour installer l'imag
 
 Ouvrir le fichier `Vagrantfile`, renommer la ligne commençant par `config.vm.box` par le nom donné sur la commande ci-dessus (exemple : Si dans la commande ci-dessus le `nomImage` est égal à `baseBox` alors, remplacer la valeur entre `"` par `baseBox`. Puis terminer par la commande `vagrant up` pour lancer l'installation de la machine.
 
-## Configurer PHP
+## Configuration PHP
 ### Afficher les erreurs
 
 Dans la Vagrant via SSH, aller dans le fichier `sudo nano /etc/php/7.0/apache2/php.ini`.
