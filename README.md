@@ -180,9 +180,11 @@ Relancer le Apache2 avec la commande `sudo service apache2 reload`.
 ----
 ## Erreurs
 
-Si une erreur survient lors du premier lancement (commande `up`) de la machine, télécharger la [version 5.1.30 de VirtualBox](http://download.virtualbox.org/virtualbox/5.1.30/VirtualBox-5.1.30-118389-OSX.dmg) (erreur apparue sous Mac).
+- Si une erreur survient lors du premier lancement (commande `up`) de la machine, télécharger la [version 5.1.30 de VirtualBox](http://download.virtualbox.org/virtualbox/5.1.30/VirtualBox-5.1.30-118389-OSX.dmg) (erreur apparue sous Mac).
 
-Si un projet Git ne peut pas être copié, se référé à la section `Variables d'environnement`.
+- Si un projet Git ne peut pas être copié, se référé à la section `Variables d'environnement`.
+
+- Eviter à ce que le poste se mette en veille alors que la Vagrant fonctionne sinon ceci pourrait faire planter la connexion entre la Vagrant et VirtualBox.
 
 ----
 ## Commandes pratiques en ligne de commandes
