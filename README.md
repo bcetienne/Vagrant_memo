@@ -12,11 +12,13 @@
 
 On peut l'assimiler au fonctionnement de VirtualBox par exemple.
 
->Pour plus d'informations se référer au site de [Vagrant](https://www.vagrantup.com/) ou bien voir [Wikipedia](https://fr.wikipedia.org/wiki/Vagrant).
+> Pour plus d'informations se référer au site de [Vagrant](https://www.vagrantup.com/) ou bien voir [Wikipedia](https://fr.wikipedia.org/wiki/Vagrant).
 
 ## Qu'est ce que PHP ?
 
 [PHP](http://php.net/) est un langage de programmation côté serveur, Orienté Objet, principalement utilisé pour produire des pages web dynamiques via un serveur HTTP.
+
+> Pour plus d'informations se référer à la [documentation officielle de PHP](http://php.net/docs.php) ou bien aller voir [Wikipedia](https://fr.wikipedia.org/wiki/PHP).
 
 ----
 ----
