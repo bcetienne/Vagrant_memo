@@ -121,9 +121,42 @@ Qui permet d'activer des sites (activer un hôte virtuel / les fichiers conf en 
 > Exemple concret : Les deux fichiers de configuration qui ont été fait par projet comme ci-dessus, les activer avec cette commande en les espaçant.
 
 
-
 Relancer le Apache2 avec la commande `sudo service apache2 reload`.
 
+
+## Faire une image de sa machine et la réutiliser
+
+### Créer une image
+
+    vagrant package
+
+Permet d'exporter sa machine virtuelle qui peut être réimportable par la suite.
+
+Suite à cette commande, celle-ci produit un fichier qui se nomme `package.box`, celle-ci est une image compressée de la machine, elle contient la configuration de la machine (`Vagrantfile`), les applications (`Apache`, `PHP`,...), les fichiers de configurations (`.conf`) mais ne sont pas conservés les projets qui se synchronisent.
+
+Pour recréer exactement la même machine, copier sur une clé USB par exemple, les fichiers `Vagrantfile`, le dossier `data` et l'image de la machine `package.box`.
+
+### Réutiliser une image
+
+Se déplacer dans le dossier créé qui contient les 3 éléments nécessaires pour refaire une copie parfaite de la machine en image.
+
+Utiliser la commande `vagrant box add <nomImage> <chemin>` pour installer l'image sur le système.
+
+- `nomImage`: Informations qui permettra de la retrouver plus rapidement (n'importe quel nom est accepté comme phpBox, baseBox, ...).
+
+- `chemin`: Chemin vers le fichier package.box qui contient la machine (exemple : `./package.box`).
+
+Ouvrir le fichier `Vagrantfile`, renommer la ligne commençant par `config.vm.box` par le nom donné sur la commande ci-dessus (exemple : Si dans la commande ci-dessus le `nomImage` est égal à `baseBox` alors, remplacer la valeur entre `"` par `baseBox`. Puis terminer par la commande `vagrant up` pour lancer l'installation de la machine.
+
+## Applications
+
+> Juste la fin de la commande est écrit, ajouter le `sudo apt-get install <Commande>`
+
+|Commande   	        |Application  	                                                                        |
+|-----------------------|---------------------------------------------------------------------------------------|
+|`apache2`  	        |Apache 2 - Serveur HTTP	                                                            |
+|`php7.0`  	            |PHP7 -	Langage de script côté serveur                                                  |
+|`libapache2-mod-php7.0`|Mod pour PHP7	                                                                        |
 
 ## Erreurs
 
