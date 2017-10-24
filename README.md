@@ -1,6 +1,6 @@
 # Vagrant
 
-----
+
 ## Qu'est ce que Vagrant ?
 
 [Vagrant](https://www.vagrantup.com/) est un logiciel libre et open-source pour la création et la configuration des environnements de développement virtuels.
@@ -9,7 +9,7 @@ On peut l'assimiler au fonctionnement de VirtualBox par exemple.
 
 >Pour plus d'informations se référer au site de [Vagrant](https://www.vagrantup.com/) ou bien voir [Wikipedia](https://fr.wikipedia.org/wiki/Vagrant).
 
-----
+
 ## Installation et mise en place
 
 Aller sur le site de Vagrant pour [télécharger la version](https://www.vagrantup.com/downloads.html) compatible avec l'OS.
