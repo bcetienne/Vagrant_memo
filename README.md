@@ -1,7 +1,9 @@
-# Vagrant
+# Vagrant et PHP
 > Auteur : Etienne Blanc-Coquand
 
 > Cours : Morgan Corroyer
+
+----
 
 ## Qu'est ce que Vagrant ?
 
@@ -11,8 +13,13 @@ On peut l'assimiler au fonctionnement de VirtualBox par exemple.
 
 >Pour plus d'informations se référer au site de [Vagrant](https://www.vagrantup.com/) ou bien voir [Wikipedia](https://fr.wikipedia.org/wiki/Vagrant).
 
+## Qu'est ce que PHP ?
 
-## Installation et mise en place
+[PHP](http://php.net/) est un langage de programmation côté serveur, Orienté Objet, principalement utilisé pour produire des pages web dynamiques via un serveur HTTP.
+
+----
+
+## Installation et mise en place d'une machine Vagrant
 
 Aller sur le site de Vagrant pour [télécharger la version](https://www.vagrantup.com/downloads.html) compatible avec l'OS.
 
