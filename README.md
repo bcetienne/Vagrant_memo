@@ -43,21 +43,31 @@ Sauvegarder, quitter le fichier de configuration et relancer Vagrant avec la com
 
 Permet de lancer la machine virtuelle ou bien de télécharger la machine qui a été donnée dans le fichier de configuration.
 
+----
+
     vagrant destroy
 
 Détruire une machine.
+
+----
 
     vagrant global-status
 
 Voir l'état actuelle de la machine virtuelle.
 
+----
+
     vagrant ssh
 
 Se connecter à la machine virtuelle via SSH.
 
+----
+
     exit
 
 Quitter le mode SSH ou l'utilisateur `root`.
+
+----
 
     vagrant reload
 
@@ -126,6 +136,48 @@ Elle est utile si une copie d'un repository Git n'est pas autorisée.
     vagrant halt
 
 ----
+## Configuration d'Apache2
+
+Pour commencer, ouvrir deux invites de commande, une qui reste sur le poste et une qui est sur le Vagrant via le SSH.
+
+Dans la fenêtre SSH, se déplacer vers le dossier `/etc/apache2/sites-available/` pour voir les fichiers de configurations.
+
+Modifier ou copier (si on compte le réutiliser) ou renommer le fichier `000-default.conf` (ne pas oublier de l'ouvrir avec les droits administrateurs pour que les modifications prennent effet).
+> Exemple pour plusieurs projets copier le fichier `000-default.conf` et le coller en le renommant `projet1.conf`, `projet2.conf`,...
+
+Modifier, copier le `documentRoot` qui doit pointer vers le dossier du projet (exemple `/var/www/html/dossierProjet1`) et le serverName qui pointera vers la bonne URL du projet (exemple `projet1.dev`).
+
+Réitérer cette procédure pour chaque projet.
+
+### Créer un domaine fictif personnalisé
+
+Dans la console qui pointe sur le poste (pas sur la Vagrant via SSH, modifier le fichier suivant avec ce chemin `sudo nano /etc/hosts`
+
+Ajouter l'adresse ip de la Vagrant avec un espace et le nom de domaine du projet (Attention à ne pas prendre un nom de domaine déjà existant ex: `192.168.33.10 projet1.dev`), sauvegarder et fermer le fichier, le tester sur le navigateur (ne pas oublier le `http://`).
+
+> N.B. : Pour mettre plusieurs projets sur une même IP, séparer les noms de projet par un espace exemple `192.168.33.10 projet1.dev projet2.dev`.
+
+Suite à tout cela, taper les commandes suivantes :
+
+    sudo a2dissite
+
+Qui permet de désactiver des sites (désactiver un hôte virtuel / les fichiers conf en gros)
+
+> Exemple concret : Si deux fichiers de configuration ont été fait par projet `projet1.conf` et `projet2.conf`, désactiver alors le fichier `000-default.conf`.
+
+----
+
+    sudo a2ensite
+
+Qui permet d'activer des sites (activer un hôte virtuel / les fichiers conf en gros)
+
+> Exemple concret : Les deux fichiers de configuration qui ont été fait par projet comme ci-dessus, les activer avec cette commande en les espaçant.
+
+----
+
+Relancer le Apache2 avec la commande `sudo service apache2 reload`.
+
+----
 ## Erreurs
 
 Si une erreur survient lors du premier lancement (commande `up`) de la machine, télécharger la [version 5.1.30 de VirtualBox](http://download.virtualbox.org/virtualbox/5.1.30/VirtualBox-5.1.30-118389-OSX.dmg) (erreur apparue sous Mac).
@@ -139,17 +191,35 @@ Si un projet Git ne peut pas être copié, se référé à la section `Variables
 
 Raccourci de `ls-all`.
 
+----
+
     ctrl + R
 
 Permet de retrouver une ancienne commande déjà taper sans utiliser les flèches du haut.
+
+----
+
+    ctrl + K
+
+Supprime une ligne dans l'invite de commande.
+
+----
 
     command + T
 
 Ouvrir plusieurs consoles.
 
+----
+
     git clone <project> ./
 
 Permet de cloner juste le contenu du repository.
+
+----
+
+    sudo !!
+
+Permet de réutiliser une commande qui n'a pas fonctionné sans les droits d'admins en utilisant cette fois-ci les droits d'administration.
 
 ----
 ## Ordre pour faire une machine Vagrant selon Morgan
