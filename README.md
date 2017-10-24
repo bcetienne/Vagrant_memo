@@ -4,6 +4,7 @@
 > Cours : Morgan Corroyer
 
 ----
+----
 
 ## Qu'est ce que Vagrant ?
 
@@ -17,6 +18,7 @@ On peut l'assimiler au fonctionnement de VirtualBox par exemple.
 
 [PHP](http://php.net/) est un langage de programmation côté serveur, Orienté Objet, principalement utilisé pour produire des pages web dynamiques via un serveur HTTP.
 
+----
 ----
 
 ## Installation et mise en place d'une machine Vagrant
