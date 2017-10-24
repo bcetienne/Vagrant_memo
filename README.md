@@ -1,5 +1,7 @@
 # Vagrant
+> Auteur : Etienne Blanc-Coquand
 
+> Cours : Morgan Corroyer
 
 ## Qu'est ce que Vagrant ?
 
@@ -34,7 +36,7 @@ Par la suite, modifier le fichier `Vagrantfile` et chercher la ligne qui contien
 
 Sauvegarder, quitter le fichier de configuration et relancer Vagrant avec la commande `vagrant reload`.
 
-----
+
 ## Utilisation et configuration du serveur
 
 >N.B. : Préfixer toutes les commandes par `vagrant`.
@@ -43,51 +45,46 @@ Sauvegarder, quitter le fichier de configuration et relancer Vagrant avec la com
 
 Permet de lancer la machine virtuelle ou bien de télécharger la machine qui a été donnée dans le fichier de configuration.
 
-----
 
     vagrant destroy
 
 Détruire une machine.
 
-----
 
     vagrant global-status
 
 Voir l'état actuelle de la machine virtuelle.
 
-----
 
     vagrant ssh
 
 Se connecter à la machine virtuelle via SSH.
 
-----
 
     exit
 
 Quitter le mode SSH ou l'utilisateur `root`.
 
-----
 
     vagrant reload
 
 Relancer la machine virtuelle.
 
-----
+
 ### Installer des paquets
 
     sudo apt-get install <package>
 
 Installe un paquet sur la machine virtuelle avec les droits d'administrateurs (ne fonctionne que pour un paquet).
 
-----
+
 ### Aller vers l'utilisateur Root
 
     sudo su
 
 Change d'utilisateur vers l'utilisateur Root.
 
-----
+
 ### Dossier des projets
 
     /var/www/html
@@ -96,7 +93,7 @@ Là où sont stockés tous les projets web.
 
 En tapant l'adresse du serveur (de base `192.168.33.10`), voir si un affichage de base s'affiche.
 
-----
+
 ### Variables d'environnement
 
     sudo nano /etc/apache2/envvars
@@ -105,7 +102,7 @@ Ici sont placés toutes les variables d'environnement.
 
 Chercher la ligne contenant `APACHE_RUN_USER` et `APACHE_RUN_GROUP` pour changer leurs valeur de base `www-data` par `ubuntu` qui correspond à des noms.
 
-----
+
 ### Relancer des services
 
     sudo service <serviceName> restart
@@ -116,7 +113,7 @@ ou bien
 
 Utiliser la commande pour que le service soit relancé ce qui permet de prendre en compte les modifications faites.
 
-----
+
 ### Changer de propriétaire
 
     sudo chown -R USER:GROUP ../html/
@@ -125,17 +122,17 @@ Cette commande permet de changer le projet de propriétaire, la commande `-R` pe
 
 Elle est utile si une copie d'un repository Git n'est pas autorisée.
 
-----
+
 ### Tout supprimer
 
     rm -rf *
 
-----
+
 ### Arrêt de la machine vagrant
 
     vagrant halt
 
-----
+
 ## Configuration d'Apache2
 
 Pour commencer, ouvrir deux invites de commande, une qui reste sur le poste et une qui est sur le Vagrant via le SSH.
@@ -165,7 +162,7 @@ Qui permet de désactiver des sites (désactiver un hôte virtuel / les fichiers
 
 > Exemple concret : Si deux fichiers de configuration ont été fait par projet `projet1.conf` et `projet2.conf`, désactiver alors le fichier `000-default.conf`.
 
-----
+
 
     sudo a2ensite
 
@@ -173,11 +170,11 @@ Qui permet d'activer des sites (activer un hôte virtuel / les fichiers conf en 
 
 > Exemple concret : Les deux fichiers de configuration qui ont été fait par projet comme ci-dessus, les activer avec cette commande en les espaçant.
 
-----
+
 
 Relancer le Apache2 avec la commande `sudo service apache2 reload`.
 
-----
+
 ## Erreurs
 
 - Si une erreur survient lors du premier lancement (commande `up`) de la machine, télécharger la [version 5.1.30 de VirtualBox](http://download.virtualbox.org/virtualbox/5.1.30/VirtualBox-5.1.30-118389-OSX.dmg) (erreur apparue sous Mac).
@@ -186,44 +183,44 @@ Relancer le Apache2 avec la commande `sudo service apache2 reload`.
 
 - Eviter à ce que le poste se mette en veille alors que la Vagrant fonctionne sinon ceci pourrait faire planter la connexion entre la Vagrant et VirtualBox.
 
-----
+
 ## Commandes pratiques en ligne de commandes
 
     ll
 
 Raccourci de `ls-all`.
 
-----
+
 
     ctrl + R
 
 Permet de retrouver une ancienne commande déjà taper sans utiliser les flèches du haut.
 
-----
+
 
     ctrl + K
 
 Supprime une ligne dans l'invite de commande.
 
-----
+
 
     command + T
 
 Ouvrir plusieurs consoles.
 
-----
+
 
     git clone <project> ./
 
 Permet de cloner juste le contenu du repository.
 
-----
+
 
     sudo !!
 
 Permet de réutiliser une commande qui n'a pas fonctionné sans les droits d'admins en utilisant cette fois-ci les droits d'administration.
 
-----
+
 ## Ordre pour faire une machine Vagrant selon Morgan
 
 Après avoir créé le dossier, installer la machine avec la commande `vagrant up`, après que la machine soit installée, télécharger le paquet de pour `apache2` et modifier les valeurs des utilisateurs d'Apache.
