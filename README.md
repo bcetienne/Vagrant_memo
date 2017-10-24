@@ -53,10 +53,8 @@ Sauvegarder, quitter le fichier de configuration et relancer Vagrant avec la com
 |`sudo su`                        |Change d'utilisateur vers l'utilisateur Root.                                          |
 |`rm -rf *`                       |Tout supprimer.	                                                                      |
 |`vagrant halt`                   |Eteindre une machine.	                                                              |
-|`sudo service <serviceName> restart` ou bien `sudo service <serviceName> reload`                     |Utiliser un des deux commandes pour que le service en question soit relancé ce qui permet de prendre en compte les modifications faites.       |
-|`sudo chown -R USER:GROUP ../html/`                   |Cette commande permet de changer le projet de propriétaire, la commande `-R` permet de faire cette commande de façon récursive (interagit avec tous les fichiers et dossiers du dossier d'origine, ici `../html/`).
-
-Elle est utile si une copie d'un repository Git n'est pas autorisée|
+|`sudo service <serviceName> restart` ou bien `sudo service <serviceName> reload`|Utiliser un des deux commandes pour que le service en question soit relancé ce qui permet de prendre en compte les modifications faites.                             |
+|`sudo chown -R USER:GROUP ../html/`|Cette commande permet de changer le projet de propriétaire, la commande `-R` permet de faire cette commande de façon récursive (interagit avec tous les fichiers et dossiers du dossier d'origine, ici `../html/`). Elle est utile si une copie d'un repository Git n'est pas autorisée                           |
 
 ### Dossier des projets
 
