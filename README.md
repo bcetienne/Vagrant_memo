@@ -41,49 +41,18 @@ Sauvegarder, quitter le fichier de configuration et relancer Vagrant avec la com
 
 >N.B. : Préfixer toutes les commandes par `vagrant`.
 
-    vagrant up
-
-Permet de lancer la machine virtuelle ou bien de télécharger la machine qui a été donnée dans le fichier de configuration.
-
-
-    vagrant destroy
-
-Détruire une machine.
-
-
-    vagrant global-status
-
-Voir l'état actuelle de la machine virtuelle.
-
-
-    vagrant ssh
-
-Se connecter à la machine virtuelle via SSH.
-
-
-    exit
-
-Quitter le mode SSH ou l'utilisateur `root`.
-
-
-    vagrant reload
-
-Relancer la machine virtuelle.
-
-
-### Installer des paquets
-
-    sudo apt-get install <package>
-
-Installe un paquet sur la machine virtuelle avec les droits d'administrateurs (ne fonctionne que pour un paquet).
-
-
-### Aller vers l'utilisateur Root
-
-    sudo su
-
-Change d'utilisateur vers l'utilisateur Root.
-
+|Commandes   	                  |Explication   	                                                                      |
+|---------------------------------|---------------------------------------------------------------------------------------|
+|`vagrant up`  	                  |Permet de lancer la machine virtuelle ou bien de télécharger la machine qui a été donnée dans le fichier de configuration.                                                                                         |
+|`vagrant destroy`	              |Détruire une machine.                                                                  |
+|`vagrant global-status`          |Voir l'état actuelle de la machine virtuelle.                                          |
+|`vagrant ssh`                    |Se connecter à la machine virtuelle via SSH.                                           |
+|`exit`                           |Quitter le mode SSH ou l'utilisateur `root`.	                                          |
+|`vagrant reload`                 |Relancer la machine virtuelle.	                                                      |
+|`sudo apt-get install <package>` |Installe un paquet sur la machine virtuelle avec les droits d'administrateurs (ne fonctionne que pour un paquet).	                                                                                       |
+|`sudo su`                        |Change d'utilisateur vers l'utilisateur Root.                                          |
+|`rm -rf *`                       |Tout supprimer.	                                                                      |
+|`vagrant halt`                   |Eteindre une machine.	                                                              |
 
 ### Dossier des projets
 
@@ -120,17 +89,7 @@ Utiliser la commande pour que le service soit relancé ce qui permet de prendre 
 
 Cette commande permet de changer le projet de propriétaire, la commande `-R` permet de faire cette commande de façon récursive (interagit avec tous les fichiers et dossiers du dossier d'origine, ici `../html/`).
 
-Elle est utile si une copie d'un repository Git n'est pas autorisée.
-
-
-### Tout supprimer
-
-    rm -rf *
-
-
-### Arrêt de la machine vagrant
-
-    vagrant halt
+Elle est utile si une copie d'un repository Git n'est pas autorisée
 
 
 ## Configuration d'Apache2
@@ -193,7 +152,7 @@ Relancer le Apache2 avec la commande `sudo service apache2 reload`.
 |`ctrl + K`             |Supprime une ligne dans l'invite de commande.                                          |
 |`command + T`          |Ouvrir plusieurs consoles.	                                                            |
 |`git clone <projet> ./`|Permet de cloner juste le contenu du repository.	                                    |
-|`sudo !!`              |Permet de réutiliser une commande qui n'a pas fonctionné sans les droits d'admins en utilisant cette                          fois-ci les droits d'administration.	                                                  |
+|`sudo !!`              |Permet de réutiliser une commande qui n'a pas fonctionné sans les droits d'admins en utilisant cette fois-ci les droits d'administration.	                                                                          |
 
 ## Ordre pour faire une machine Vagrant selon Morgan
 
