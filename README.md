@@ -85,15 +85,6 @@ Ici sont placés toutes les variables d'environnement.
 Chercher la ligne contenant `APACHE_RUN_USER` et `APACHE_RUN_GROUP` pour changer leurs valeur de base `www-data` par `ubuntu` qui correspond à des noms.
 
 
-### Changer de propriétaire
-
-    sudo chown -R USER:GROUP ../html/
-
-Cette commande permet de changer le projet de propriétaire, la commande `-R` permet de faire cette commande de façon récursive (interagit avec tous les fichiers et dossiers du dossier d'origine, ici `../html/`).
-
-Elle est utile si une copie d'un repository Git n'est pas autorisée
-
-
 ## Configuration d'Apache2
 
 Pour commencer, ouvrir deux invites de commande, une qui reste sur le poste et une qui est sur le Vagrant via le SSH.
