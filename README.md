@@ -190,14 +190,19 @@ Redémarrer le service Apache
 |`git clone <projet> ./`|Permet de cloner juste le contenu du repository.	                                    |
 |`sudo !!`              |Permet de réutiliser une commande qui n'a pas fonctionné sans les droits d'admins en utilisant cette fois-ci les droits d'administration.	                                                                          |
 
-## Ordre pour faire une machine Vagrant selon Morgan
+## Créer une Vagrant orienté web (VAMP).
 
-Après avoir créé le dossier, installer la machine avec la commande `vagrant up`, après que la machine soit installée, télécharger le paquet de pour `apache2` et modifier les valeurs des utilisateurs d'Apache.
+Créer le dossier VAMP, se déplacer dans le dossier VAMP, créer un dossier data et faire la commande `vagrant init`.
 
-Modifier les utilisateurs avec la commande `chown`, virer le `index.html` présent de base avec Apache.
+Ouvrir le fichier `Vagrantfile`, modifier la ligne 15 en enlevant le commentaire et en mettant le nom de l'image à télécharger, ici `config.vm.box = "ubuntu/xenial64"`, la ligne 35 en enlevant le commentaire et en mettant l'adresse de la machine, ici `config.vm.network "private_network", ip: "192.168.33.10"` et la ligne 46 en enlevant le commentaire et en mettant le dossier `data` qui sera synchronisé avec le chemin spécifié du dossier sur la machine Vagrant, ici `config.vm.synced_folder "./data", "/var/www/html/"`.
 
-Retourner dans le dossier de la Vagrant, créer un dossier `data`, cloner le dépôt Git dans le dossier `data`.
+Démarrer la machine toujours depuis le dossier VAMP avec la commande `vagrant up` pour installer l'image.
 
-Modifier le fichier `Vagrantfile` pour le `sync_folder`, sauvegarder, et relancer la machine avec `vagrant reload`.
+Se connecter à la machine via SSH avec la commande `vagrant ssh` et installer les paquets de PHP, PHPMyAdmin, Apache2 et MySQL avec la commande suivante `sudo apt-get install apache2 php7.0 libapache2-mod-php7.0 mysql-server php7.0-mysql phpmyadmin`.
 
-Retourner avec la commande `vagrant ssh` dans le serveur, chercher le dossier `/var/www/html` pour voir si tout le dépôt à bien été copié depuis Git.
+Rentrer le mot de passe de la base MySQL, sélectionner Apache2.
+
+Se déplacer dans le dossier `var/www/html/` et vérifier avec la commande `ls` que le fichier `index.html` existe, modifier les utilisateurs d'Apache dans le fichier `/etc/apache2/envvars` et modifier par `export APACHE_RUN_USER=ubuntu export APACHE_RUN_GROUP=ubuntu` faire ensuite la commande `sudo chown -R ubuntu:ubuntu ../html/`, relancer Apache avec la commande `sudo service apache2 restart` supprimer le fichier `index.html` avec la commande `rm -rf index.html`.
+
+Activer les affichages d'erreurs de PHP en modifiant le fichier `/etc/php/7.0/apache2/php.ini`, remplacer les valeurs `Off` par `On` sur les lignes suivantes `display_errors` et `display_startup_errors`, relancer Apache.
+
