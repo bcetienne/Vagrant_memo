@@ -206,3 +206,5 @@ Se déplacer dans le dossier `var/www/html/` et vérifier avec la commande `ls` 
 
 Activer les affichages d'erreurs de PHP en modifiant le fichier `/etc/php/7.0/apache2/php.ini`, remplacer les valeurs `Off` par `On` sur les lignes suivantes `display_errors` et `display_startup_errors`, relancer Apache.
 
+Pour modifier l'heure et avoir l'heure locale, faire la commande `sudo dpkg-reconfigure tzdata` et choisir sa région.
+
