@@ -226,9 +226,9 @@ Pour modifier l'heure et avoir l'heure locale, faire la commande `sudo dpkg-reco
 
 ## Liste d'outils utiles
 
-- [Vagrant](https://www.vagrantup.com/) et bien évidemment [VirtualBox](https://www.virtualbox.org/).
+- [Vagrant](https://www.vagrantup.com/) et bien évidemment [VirtualBox](https://www.virtualbox.org/) qui permettent la virtualisation des serveurs en règle générale.
 
-- [Outils JetBrains](https://www.jetbrains.com/) comme [PhpStorm](https://www.jetbrains.com/phpstorm/) ou bien [DataGrio](https://www.jetbrains.com/datagrip/) qui sont des IDE qui permettent, respectivement, de gérer des projets PHP en pouvant s'occuper en polyvalence de ce qui est CSS, HTML, Javascript, SQL et l'autre IDE qui est beaucoup axé sur la gestion des base de données.
+- [Outils JetBrains](https://www.jetbrains.com/) comme [PhpStorm](https://www.jetbrains.com/phpstorm/) ou bien [DataGrio](https://www.jetbrains.com/datagrip/) qui sont tous deux des IDE très puissants et performants qui permettent, respectivement, de gérer des projets PHP en pouvant s'occuper en polyvalence de ce qui est CSS, HTML, Javascript, SQL, ... et l'autre IDE qui est beaucoup plus axé sur la gestion des base de données.
 
 - [MySQL Workbench](https://www.mysql.com/fr/products/workbench/) ou bien [Toad for MySQL](https://www.toadworld.com/products/toad-for-mysql) qui sont tous les deux de très bons outils permettant de gérer des bases de données.
 
