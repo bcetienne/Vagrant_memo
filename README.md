@@ -12,13 +12,27 @@
 
 On peut l'assimiler au fonctionnement de VirtualBox par exemple.
 
-> Pour plus d'informations se référer au site de [Vagrant](https://www.vagrantup.com/) ou bien voir [Wikipedia](https://fr.wikipedia.org/wiki/Vagrant).
+> Pour plus d'informations, se référer au site de [Vagrant](https://www.vagrantup.com/) ou bien voir [Wikipedia](https://fr.wikipedia.org/wiki/Vagrant).
+
+## Qu'est ce que Apache ?
+
+Le logiciel libre Apache HTTP Server est un serveur HTTP. C'est le serveur HTTP le plus célèbre sur Internet.
+
+> Pour plus d'informations, se référer au site de [Apache](https://httpd.apache.org/) ou bien voir [Wikipedia](https://fr.wikipedia.org/wiki/Apache_HTTP_Server).
+
+## Qu'est ce que MySQL ?
+
+MySQL est un système de gestion de base de données relationnelles (SGBDR). Il fait parti des logiciels de gestion de base de données les plus utilisés au monde autant par le grand public que les professionnels.
+
+> Pour plus d'informations, se référer au site de [MySQL](https://www.mysql.com/) ou bien voir [Wikipedia](https://fr.wikipedia.org/wiki/MySQL).
 
 ## Qu'est ce que PHP ?
 
 [PHP](http://php.net/) est un langage de programmation côté serveur, Orienté Objet, principalement utilisé pour produire des pages web dynamiques via un serveur HTTP.
 
-> Pour plus d'informations se référer à la [documentation officielle de PHP](http://php.net/docs.php) ou bien aller voir [Wikipedia](https://fr.wikipedia.org/wiki/PHP).
+> Pour plus d'informations, se référer à la [documentation officielle de PHP](http://php.net/docs.php) ou bien aller voir [Wikipedia](https://fr.wikipedia.org/wiki/PHP).
+
+### Ces trois technologies réunis sous une seule même machine forment [la machine VAMP que l'on peut voir plus bas](#vampMachine).
 
 ----
 ----
@@ -190,7 +204,7 @@ Redémarrer le service Apache
 |`git clone <projet> ./`|Permet de cloner juste le contenu du repository.	                                    |
 |`sudo !!`              |Permet de réutiliser une commande qui n'a pas fonctionné sans les droits d'admins en utilisant cette fois-ci les droits d'administration.	                                                                          |
 
-## Créer une Vagrant orienté web (VAMP).
+## <a id="vampMachine"></a>Créer une Vagrant orienté web (VAMP).
 
 Créer le dossier VAMP, se déplacer dans le dossier VAMP, créer un dossier data et faire la commande `vagrant init`.
 
