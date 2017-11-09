@@ -222,3 +222,15 @@ Activer les affichages d'erreurs de PHP en modifiant le fichier `/etc/php/7.0/ap
 
 Pour modifier l'heure et avoir l'heure locale, faire la commande `sudo dpkg-reconfigure tzdata` et choisir sa région.
 
+----
+
+## Liste d'outils utiles
+
+- [Vagrant](https://www.vagrantup.com/) et bien évidemment [VirtualBox](https://www.virtualbox.org/).
+
+- [Outils JetBrains](https://www.jetbrains.com/) comme [PhpStorm](https://www.jetbrains.com/phpstorm/) ou bien [DataGrio](https://www.jetbrains.com/datagrip/) qui sont des IDE qui permettent, respectivement, de gérer des projets PHP en pouvant s'occuper en polyvalence de ce qui est CSS, HTML, Javascript, SQL et l'autre IDE qui est beaucoup axé sur la gestion des base de données.
+
+- [MySQL Workbench](https://www.mysql.com/fr/products/workbench/) ou bien [Toad for MySQL](https://www.toadworld.com/products/toad-for-mysql) qui sont tous les deux de très bons outils permettant de gérer des bases de données.
+
+- [Atom](https://atom.io/) ou bien [Sublime Text](https://www.sublimetext.com/) qui sont tous les deux des éditeurs de texte qui peuvent gérer les différents langages du web et qui peuvent avoir différents paquets installés pour avoir de plus amples fonctionnalitées.
+
