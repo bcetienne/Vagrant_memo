@@ -139,7 +139,6 @@ Relancer le Apache2 avec la commande `sudo service apache2 reload`.
 
 
 ## Faire une image de sa machine et la réutiliser
-
 ### Créer une image
 
     vagrant package
@@ -165,11 +164,11 @@ Ouvrir le fichier `Vagrantfile`, renommer la ligne commençant par `config.vm.bo
 ## Configuration PHP
 ### Afficher les erreurs
 
-Dans la Vagrant via SSH, aller dans le fichier `sudo nano /etc/php/7.0/apache2/php.ini`.
+Dans la Vagrant, aller dans le fichier `sudo nano /etc/php/7.0/apache2/php.ini`.
 
-Rechercher la ligne `display_errors = Off` et remplacer `Off` par `On`. Attention au "o" en majuscule.
+Rechercher la ligne `display_errors = Off` et remplacer `Off` par `On`.
 
-Rechercher la ligne `display_startup_errors = Off` et remplacer `Off` par `On`. Attention au "o" en majuscule.
+Rechercher la ligne `display_startup_errors = Off` et remplacer `Off` par `On`.
 
 Redémarrer le service Apache
 
@@ -182,6 +181,9 @@ Redémarrer le service Apache
 |`apache2`  	        |Apache 2 - Serveur HTTP	                                                            |
 |`php7.0`  	            |PHP7 -	Langage de script côté serveur                                                  |
 |`libapache2-mod-php7.0`|Mod pour PHP7	                                                                        |
+|`mysql-server`         |Serveur MySQL	                                                                        |
+|`php7.0-mysql`         |Active les modules MySQL pour PHP                                                            
+
 
 ## Erreurs
 
@@ -206,21 +208,23 @@ Redémarrer le service Apache
 
 ## <a id="vampMachine"></a>Créer une Vagrant orienté web (VAMP).
 
-Créer le dossier VAMP, se déplacer dans le dossier VAMP, créer un dossier data et faire la commande `vagrant init`.
+Créer le dossier VAMP, se déplacer dans le dossier VAMP, créer un dossier data et faire la commande `vagrant init ubuntu/xenial64` pour automatiquement ajouter l'image de la machine.
 
-Ouvrir le fichier `Vagrantfile`, modifier la ligne 15 en enlevant le commentaire et en mettant le nom de l'image à télécharger, ici `config.vm.box = "ubuntu/xenial64"`, la ligne 35 en enlevant le commentaire et en mettant l'adresse de la machine, ici `config.vm.network "private_network", ip: "192.168.33.10"` et la ligne 46 en enlevant le commentaire et en mettant le dossier `data` qui sera synchronisé avec le chemin spécifié du dossier sur la machine Vagrant, ici `config.vm.synced_folder "./data", "/var/www/html/"`.
+Ouvrir le fichier `Vagrantfile`, modifier la ligne 35 en enlevant le commentaire et en mettant l'adresse de la machine, ici `config.vm.network "private_network", ip: "192.168.33.10"` et la ligne 46 en enlevant le commentaire et en mettant le dossier `data` qui sera synchronisé avec le chemin spécifié du dossier sur la machine Vagrant, ici `config.vm.synced_folder "./data", "/var/www/html/"`.
 
 Démarrer la machine toujours depuis le dossier VAMP avec la commande `vagrant up` pour installer l'image.
 
-Se connecter à la machine via SSH avec la commande `vagrant ssh` et installer les paquets de PHP, PHPMyAdmin, Apache2 et MySQL avec la commande suivante `sudo apt-get install apache2 php7.0 libapache2-mod-php7.0 mysql-server php7.0-mysql phpmyadmin`.
+Se connecter à la machine via SSH avec la commande `vagrant ssh` et installer les paquets de PHP, PHPMyAdmin, Apache2 et MySQL avec la commande suivante `sudo apt-get install apache2 php7.0 libapache2-mod-php7.0 mysql-server php7.0-mysql`.
 
-Rentrer le mot de passe de la base MySQL, sélectionner Apache2.
+Entrer le mot de passe de la base MySQL, sélectionner Apache2.
 
 Se déplacer dans le dossier `var/www/html/` et vérifier avec la commande `ls` que le fichier `index.html` existe, modifier les utilisateurs d'Apache dans le fichier `/etc/apache2/envvars` et modifier par `export APACHE_RUN_USER=ubuntu export APACHE_RUN_GROUP=ubuntu` faire ensuite la commande `sudo chown -R ubuntu:ubuntu ../html/`, relancer Apache avec la commande `sudo service apache2 restart` supprimer le fichier `index.html` avec la commande `rm -rf index.html`.
 
 Activer les affichages d'erreurs de PHP en modifiant le fichier `/etc/php/7.0/apache2/php.ini`, remplacer les valeurs `Off` par `On` sur les lignes suivantes `display_errors` et `display_startup_errors`, relancer Apache.
 
 Pour modifier l'heure et avoir l'heure locale, faire la commande `sudo dpkg-reconfigure tzdata` et choisir sa région.
+
+Pour avoir les informations de connexion à la base de données, taper la commande `vagrant ssh-config`.
 
 ----
 
